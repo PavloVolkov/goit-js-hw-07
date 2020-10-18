@@ -52,10 +52,10 @@ function destroyBoxes() {
 }
 
 inputEl.addEventListener("blur", function onInputChange(event) {
-  let z = Number(event.currentTarget.value);
+  let currentValue = Number(event.currentTarget.value);
 
   renderBtnEl.addEventListener("click", function handleRenderBtnClick() {
     destroyBoxes();
-    createBoxes(z);
+    createBoxes(currentValue);
   });
 });
