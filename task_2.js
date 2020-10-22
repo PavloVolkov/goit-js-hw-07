@@ -14,7 +14,7 @@ const listbuilder = (arr) => {
     return a;
   });
 };
-let x = listbuilder(ingredients);
+const x = listbuilder(ingredients);
 ingredientsListEl.append(...x);
 // const newIngredientsListEl = ingredients.map((el) => {
 //   const a = document.createElement("li");

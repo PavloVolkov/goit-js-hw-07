@@ -3,11 +3,10 @@
         <span id="value">0</span>
         <button type="button" data-action="increment">+1</button>
 */
-const buttonsEl = document.querySelectorAll("#counter button");
 const btnSpanEl = document.querySelector("#value");
 let counterValue = 0;
-const incButton = buttonsEl[1];
-const decButton = buttonsEl[0];
+const incButton = document.querySelector(`button[data-action="increment"]`);
+const decButton = document.querySelector(`button[data-action="decrement"]`);
 
 function increment() {
   counterValue += 1;

@@ -11,12 +11,12 @@
  */
 const inputEl = document.querySelector("#validation-input");
 
-let lengthEl = inputEl.dataset.length;
+const lengthEl = inputEl.dataset.length;
 inputEl.addEventListener("focus", () => {
   inputEl.classList.add("focused");
 });
 inputEl.addEventListener("blur", () => {
-  let value = inputEl.value;
+  const value = inputEl.value;
   if (value.length === Number(lengthEl)) {
     inputEl.classList.remove("focused");
     inputEl.classList.remove("invalid");

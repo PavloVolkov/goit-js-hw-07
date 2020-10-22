@@ -5,11 +5,10 @@ const outputEl = document.querySelector("#name-output");
 // console.log(inputEl.value);
 // console.log(outputEl.textContent);
 
-inputEl.addEventListener("blur", () => {
-  if (typeof inputEl.value === "string" && inputEl.value !== "") {
+inputEl.addEventListener("input", () => {
+  if (inputEl.value !== "") {
     outputEl.textContent = inputEl.value;
-    return outputEl.textContent;
   } else {
-    return (outputEl.textContent = "незнакомец");
+    outputEl.textContent = "незнакомец";
   }
 });

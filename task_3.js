@@ -15,31 +15,9 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
-const list = (arr, selector) => {
-  const listEl = document.querySelector(`${selector}`);
-  listEl.classList.add("main_list");
-  arr.map(({ url, alt }) => {
-    listEl.insertAdjacentHTML(
-      "beforeend",
-      ` <li><img class="box" src="${url}" alt="${alt}"></li>`
-    );
-  });
-};
-
-list(images, "#gallery");
 
 // const list = (arr, selector) => {
-//   const listEl = document.querySelector(`${selector}`);
-//   const listItems = (arr) => {
-//     return arr.map(({ url, alt }) => {
-//       listEl.insertAdjacentHTML(
-//         "beforeend",
-//         ` <li><img class="box" src="${url}" alt="${alt}"></li>`
-//       );
-//     });
-//   };
-//   listEl.append(...listItems(images));
-// };
+//   const listEl = document.que
 
 // const list = (arr, selector) => {
 //   const listItems = (arr) => {
@@ -56,3 +34,17 @@ list(images, "#gallery");
 //   const listEl = document.querySelector(`${selector}`);
 //   listEl.append(...listItems(images));
 // };
+const listEl = document.querySelector("#gallery");
+const listItems = (arr) => {
+  return arr.map(({ url, alt }) => {
+    const listItem = document.createElement("li");
+    const itemImage = document.createElement("img");
+
+    itemImage.src = url;
+    itemImage.alt = alt;
+    itemImage.classList.add("box");
+    return listItem.appendChild(itemImage);
+  });
+};
+
+listEl.append(...listItems(images));
