@@ -35,16 +35,19 @@ const images = [
 //   listEl.append(...listItems(images));
 // };
 const listEl = document.querySelector("#gallery");
-const listItems = (arr) => {
-  return arr.map(({ url, alt }) => {
-    const listItem = document.createElement("li");
-    const itemImage = document.createElement("img");
+const listItems = images.map(({ url, alt }) => {
+  return ` <li>
+            <img class="box" src="${url} alt="${alt}"></img>
+        </li>
+        `;
+});
 
-    itemImage.src = url;
-    itemImage.alt = alt;
-    itemImage.classList.add("box");
-    return listItem.appendChild(itemImage);
-  });
-};
+listEl.insertAdjacentHTML("beforeend", listItems);
+// listEl.append(...listItems(images));
+// const listItem = document.createElement("li");
+// const itemImage = document.createElement("img");
 
-listEl.append(...listItems(images));
+// itemImage.src = url;
+// itemImage.alt = alt;
+// itemImage.classList.add("box");
+// return listItem.appendChild(itemImage);
