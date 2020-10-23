@@ -35,12 +35,11 @@ const images = [
 //   listEl.append(...listItems(images));
 // };
 const listEl = document.querySelector("#gallery");
-const listItems = images.map(({ url, alt }) => {
-  return ` <li>
-            <img class="box" src="${url} alt="${alt}"></img>
-        </li>
-        `;
-});
+const listItems = images
+  .map(({ url, alt }) => {
+    return `<li><img class="box" src="${url} alt="${alt}"></img></li>`;
+  })
+  .join("");
 
 listEl.insertAdjacentHTML("beforeend", listItems);
 // listEl.append(...listItems(images));
